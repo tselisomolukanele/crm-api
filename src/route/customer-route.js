@@ -1,4 +1,6 @@
 import express from 'express';
+import { customerService } from '../service/customer-service.js';
+
 const router = express.Router();
 const customers = [];
 // GET all customers
@@ -8,8 +10,9 @@ router.get('/', (req, res) => {
 // POST a new customer
 router.post('/', (req, res) => {
    const customer = req.body;
-   customers.push({ ...customer, id: 1 + Math.random().toString(36).substring(7) });
-   res.send(`${customer.id} has been added to the Database`);
+   customerService.addCustomer(customer).then(newCustomer => {
+      res.send(`${newCustomer.id} has been added to the Database`);
+   })
 });
 // GET a customer by ID
 router.get('/:id', (req, res) => {
