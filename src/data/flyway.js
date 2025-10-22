@@ -6,7 +6,7 @@ dotenv.config();
 
 const flyway = new Flyway(
     {
-        url: process.env.DB_URL,
+        url: `${process.env.DB_SCHEME}://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`,
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         defaultSchema: "public",

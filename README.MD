@@ -3,9 +3,13 @@
 ### Environment varibles
 Create a `.env` file on the root directory and modify these variables accroding to the intended environment
 ```
-DB_URL= jdbc:postgresql://localhost:5432/postgres
+DB_SCHEME= jdbc:postgresql
+DB_HOST= localhost
+DB_PORT= 5432
+DB_DATABASE= postgres
 DB_USER= postgres
-DB_PASSWORD= postgress
+DB_PASSWORD= postgres
+SERVER_PORT= 5000
 ```
 
 ### DB prepararion
