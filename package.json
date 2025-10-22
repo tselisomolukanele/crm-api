@@ -2,9 +2,11 @@
   "name": "crm-api",
   "version": "1.0.0",
   "description": "Expose API service endpoints for CRM application",
-  "main": "index.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "test",
     "flyway:migrate": "node flyway.js migrate",
     "flyway:clean": "node flyway.js clean"
@@ -24,6 +26,10 @@
   "homepage": "https://github.com/tselisomolukanele/crm-api#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "node-flyway": "^0.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
