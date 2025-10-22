@@ -1,0 +1,9 @@
+# env file
+.env
+
+# Flyway report
+report.html
+report.json
+
+# node
+node_modules

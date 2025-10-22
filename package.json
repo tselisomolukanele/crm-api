@@ -1,0 +1,29 @@
+{
+  "name": "crm-api",
+  "version": "1.0.0",
+  "description": "Expose API service endpoints for CRM application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "flyway:migrate": "node flyway.js migrate",
+    "flyway:clean": "node flyway.js clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tselisomolukanele/crm-api.git"
+  },
+  "keywords": [
+    "CRM"
+  ],
+  "author": "Tseliso Molukanele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tselisomolukanele/crm-api/issues"
+  },
+  "homepage": "https://github.com/tselisomolukanele/crm-api#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "node-flyway": "^0.0.13"
+  }
+}
