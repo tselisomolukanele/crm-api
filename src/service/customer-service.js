@@ -1,4 +1,4 @@
-import { Customer } from '../repository/model/customer.js';
+import { Customer } from '../repository/model/index.js';
 
 class CustomerService {
     async addCustomer(customer) {
@@ -7,8 +7,17 @@ class CustomerService {
             const newCustomer = await Customer.create({
                 ...customer
             });
-            
+
             return newCustomer;
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    async getAllCustomers() {
+        try {
+            const customers = await Customer.findAll();
+            return customers;
         } catch (error) {
             console.error('Error:', error.message);
         }

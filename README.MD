@@ -14,4 +14,4 @@ SERVER_PORT= 5000
 
 ### DB prepararion
 Run the following command to prepare DB with Flyway 
-`node --run flyway:migrate`
+`node --run db-migrate`

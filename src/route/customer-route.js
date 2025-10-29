@@ -5,7 +5,9 @@ const router = express.Router();
 const customers = [];
 // GET all customers
 router.get('/', (req, res) => {
-   res.send(customers);
+   customerService.getAllCustomers().then(customers =>
+      res.send(customers)
+   )
 });
 // POST a new customer
 router.post('/', (req, res) => {
@@ -19,21 +21,5 @@ router.get('/:id', (req, res) => {
    const { id } = req.params;
    const foundcustomer = customers.find(customer => customer.id === id);
    res.send(foundcustomer);
-});
-// DELETE a customer by ID
-router.delete('/:id', (req, res) => {
-   const { id } = req.params;
-   customers = customers.filter(customer => customer.id !== id);
-   res.send(`${id} deleted successfully from database`);
-});
-// PATCH a customer by ID
-router.patch('/:id', (req, res) => {
-   const { id } = req.params;
-   const { first_name, last_name, email } = req.body;
-   const customer = customers.find(customer => customer.id === id);
-   if (first_name) customer.first_name = first_name;
-   if (last_name) customer.last_name = last_name;
-   if (email) customer.email = email;
-   res.send(`customer with the ${id} has been updated`);
 });
 export default router;
