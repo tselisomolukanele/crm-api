@@ -8,8 +8,8 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "test",
-    "flyway:migrate": "node src/data/flyway.js migrate",
-    "flyway:clean": "node src/data/flyway.js clean"
+    "db-migrate": "node src/repository/flyway.js migrate",
+    "db-clean": "node src/repository/flyway.js clean"
   },
   "repository": {
     "type": "git",
